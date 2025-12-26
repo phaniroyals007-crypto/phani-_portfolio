@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PHANIKUMAR | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --primary: #0a3d62;
+    --secondary: #1e6091;
+    --light: #f4f6f8;
+    --resume-bg: #1e6091;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--light);
+    color: #333;
+    position: relative;
+}
+
+/* ===== GREETING ===== */
+.greeting {
+    
+    color: rgb(80, 14, 14);
+    padding: 10px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 2s ease-in-out infinite alternate;
+    font-optical-sizing: inherit;
+}
+
+.greeting span {
+    margin-left: 10px;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+
+    padding: 14px 24px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    border-radius: 100px;
+}
+.nav:bottom{
+    text-align: right;
+}
+
+nav a {
+    color: rgb(206, 219, 25);
+    margin-left: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 600px;
+}
+
+nav a:hover {
+    background-color: var(--secondary);
+}
+
+/* ===== PHOTO FRAME WITH IMAGE ===== */
+.owl-frame {
+    position: absolute;
+    top: 95px;
+    left: 25px;
+    width: 180px;
+    z-index: 1200;
+}
+
+.frame-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: left;
+    padding: 50px;
+    margin: 55px;
+}
+
+.frame-img:hover {
+    border-color: rgb(181, 150, 122);
+    transform: scale(1.06);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.25);
+
+}
+
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(135deg, #0a3d62, #083358);
+    color: white;
+    padding: 90px 20px 60px;
+    text-align: center;
+    border-radius: 1200px;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+header span {
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 26px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--primary);
+    padding-left: 12px;
+}
+
+/* ===== ABOUT ME ===== */
+.about-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    line-height: 1.7;
+}
+
+/* ===== PROJECTS ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.5s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* ===== SKILLS ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+}
+
+.skill-box {
+    background: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.skill-box:hover {
+    background: var(--primary);
+    color: rgb(32, 31, 31);
+    transform: scale(1.05);
+}
+
+/* ===== CONTACT ===== */
+.contact-row {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-box {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+
+.contact-box span {
+    display: block;
+    margin-top: 10px;
+    color: var(--primary);
+}
+
+@keyframes float {
+    from { transform: translateY(-5px); }
+    to { transform: translateY(5px); }
+}
+
+/* ===== RESUME SECTION ===== */
+#resume {
+    background-color: var(--resume-bg);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 12px;
+    transform: translateZ(3px);
+}
+
+#resume h2 {
+    border-left: none;
+    color: rgb(23, 181, 118);
+    margin-bottom: 40px;
+    padding-left: 0;text-shadow: #1c0c1c;
+    text-decoration-line: underline ;
+}
+
+#resume .btn {
+    background: white;
+    color: var(--resume-bg);
+    font-weight: bold;
+    transition: all 0.3s;
+    margin: 10px;
+    text-overflow: ellipsis;
+}
+
+#resume .btn:hover {
+    background: #101112;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    margin: 15px 15px 0 0;
+    padding: 12px 24px;
+    background: teal;
+    color: white;
+    text-decoration:rgb(42, 122, 122);
+    border-radius: 600px;
+    font-weight: 600;
+    
+}
+
+.btn:hover {
+    background: rgb(96, 96, 60);
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #121112;
+    color: white;
+    text-align: center;
+    border-radius: 200px;
+    
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 700px) {
+    .contact-row {
+        flex-direction: column;
+    }
+    .owl-frame {
+        position: relative;
+        margin: 20px auto;
+        left: 0;
+        top: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== GREETING ===== -->
+<div class="greeting">👋 <span>Hi, I’m PHANIKUMAR</span></div>
+
+<!-- PHOTO FRAME WITH IMAGE -->
+<div class="owl-frame">
+    <img src="c:\Users\PHANI KUMAR TELU\OneDrive\Desktop\img.profile.jpeg" alt="Phani" class="frame-img">
+</div>
+
+<!-- TOP NAVBAR -->
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About Me</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+<a href="#resume">Resume</a>
+</nav>
+
+<header id="home">
+<h1>PHANIKUMAR</h1>
+<p>Web Developer | Frontend Engineer</p>
+<span>Fusion5Tech Solutions</span>
+</header>
+
+<!-- ===== ABOUT ME ===== -->
+<section id="about">
+<h2>About Me</h2>
+<div class="about-card">
+<p>
+I am a Frontend Web Developer at <strong>Fusion5Tech Solutions</strong>, specializing in building responsive, user-friendly web applications. My role includes developing web interfaces using HTML, CSS, JavaScript, and React.js, collaborating with design and backend teams, ensuring seamless functionality, optimizing performance, and delivering high-quality solutions. I also participate in code reviews, implement best practices, and contribute to project planning to improve team efficiency.
+</p>
+</div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="project-grid">
+<div class="project-card">
+<h3>Smart Street Light System</h3>
+<p>IoT-based system using ESP8266/ESP32 for automatic energy-efficient street lighting.</p>
+</div>
+<div class="project-card">
+<h3>Student Management System</h3>
+<p>Web application for managing student records using SQL.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill-box">HTML</div>
+<div class="skill-box">CSS</div>
+<div class="skill-box">JavaScript</div>
+<div class="skill-box">React.js</div>
+<div class="skill-box">SQL</div>
+<div class="skill-box">Git</div>
+<div class="skill-box">VS Code</div>
+<div class="skill-box">Responsive Design</div>
+</div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact-row">
+<div class="contact-box">📧 Email<span>phanikumar@gmail.com</span></div>
+<div class="contact-box">📞 Phone<span>9347356696</span></div>
+<div class="contact-box">📍 Location<span>Hyderabad,INDIA</span></div>
+<div class="contact-box">💼 Availability<span>Remote / Onsite Opportunitys</span></div>
+</div>
+</section>
+
+<!-- ===== RESUME & LINKS ===== -->
+<section id="resume">
+<h2>Resume</h2>
+<a href="Resume.pdf" class="btn" download>   ⬇️ Download Resume</a>
+<h2> links</h2>
+<a href="#" class="btn">
+  <i class="fa-brands fa-github"></i>🔗Github
+
+</a>
+
+<a href="https://www.linkedin.com/in/phani-kumar-102453334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn" target="_blank">
+  <i class="fa-brands fa-linkedin"></i>🔗LinkedIn 
+
+
+</a>
+
+<a href="https://share.google/zAhaxPDJjmYIdGCnb" class="btn">
+  <i class="fa-brands fa-x-twitter"></i> Twitter 🐦
+
+</a>
+
+
+
+
+
+</section>
+
+<!-- BOTTOM NAVBAR -->
+<nav>
+    <ul>
+<a  href="#home">.Home</a><br>
+
+<a href="#about">.About Me</a><br>
+
+
+<a href="#projects">.Projects</a><br>
+
+<a href="#skills">.Skills</a><br>
+
+<a href="#contact">.Contact</a><br>
+
+<a href="#resume">.Resume</a><br>
+</ul>
+</nav>
+
+<footer>
+<p>© 2025 PHANIKUMAR | Fusion5Tech Solutions</p>
+</footer>
+
+</body>
+</html>
